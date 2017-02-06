@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get 'users/new'
+
+  get 'users/create'
+
+  Rails.application.routes.draw do
+    resources :products
+    resources :users, only: [:new, :create]
+  end
   # get 'products/index'
   # get 'products/show'
   # get 'products/new'
